@@ -5,6 +5,9 @@ class Appliance:
     def operate(self):
         print("Operating")
 
+    def info(self):
+        print(f"The {self.brand} is a model {self.model}")
+
 class WashingMachine(Appliance):
     def __init__(self, name, model):
         super().__init__(name, model)
@@ -23,9 +26,13 @@ class Microwave(Appliance):
     def operate(self):
         print("Heating food!")
 
-washingmachine= WashingMachine("WashingMachine", "Samsung")
+washingmachine = WashingMachine("WashingMachine", "Samsung")
 refrigerator = Refrigerator("Refrigerator", "Samsung")
 microwave = Microwave("Microwave", "Samsung")
 
 for appliance in [washingmachine, refrigerator, microwave]:
     appliance.operate()
+
+washingmachine.info()
+refrigerator.info()
+microwave.info()
