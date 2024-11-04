@@ -1,19 +1,19 @@
 from abc import ABC, abstractmethod
 
-class Ibon(ABC):
-    def __init__(self, name):
-        self.name = name
-
+class Character(ABC):
     @property
     @abstractmethod
-    def lumilipad(self):
+    def alias(self):
         pass
 
-class Kalapati(Ibon):
-    @property
-    def lumilipad(self):
-        return f"Ang {self.name} ay marunong lumipad!"
-    
-barako = Kalapati("Asul")
-print(barako.lumilipad)
+class Batman(Character):
+    def __init__(self, real_name, __alias):
+        self.real_name = real_name
+        self.__alias = __alias
 
+    @property
+    def alias(self):
+        return f"{self.real_name}, {self.__alias}"
+    
+batman = Batman("Bruce Wayne", "Batman")
+print(batman.alias)
